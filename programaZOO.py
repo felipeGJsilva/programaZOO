@@ -8,3 +8,12 @@ class Animal:
         self.habitat = habitat
         self.vizinhos = []
         self.horas_alimentacao = horas_alimentacao
+    
+    def adicionar_vizinho(self,vizinho):
+        if len(self.vizinhos) <2:
+            self.vizinhos.append(vizinho)
+        else:
+            print(f"{self.nome} ja tem o numero maximo de vizinhos")
+
+    def fazer_barulho(self):
+        return f"{self.nome} faz {self.barulho}!"
