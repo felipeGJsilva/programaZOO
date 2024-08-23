@@ -28,3 +28,11 @@ class Animal:
 
     def __str__(self):
         return f"{self.nome}, {self.idade} anos, {self.alimentacao}, Habitat: {self.habitat}"
+
+    class Mamifero(Animal):
+    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pelo):
+        super().__init__(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
+        self.tipo_pelo = tipo_pelo
+
+    def __str__(self):
+        return super().__str__() + f", Tipo de Pelo: {self.tipo_pelo}"

@@ -17,3 +17,12 @@ class Animal:
 
     def fazer_barulho(self):
         return f"{self.nome} faz {self.barulho}!"
+
+    def se_movimentar(self):
+        return f"{self.nome} se move {self.movimento}."
+    
+    def alimentar(self):
+        return f"{self.nome} foi alimentado às {self.horas_alimentacao}."
+    
+    def __str__(self):
+        return f"{self.nome}, {self.idade} anos, {self.alimentacao}, Habitat: {self.habitat}"
