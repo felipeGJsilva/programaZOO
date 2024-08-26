@@ -38,11 +38,16 @@ class Mamifero(Animal):
     
 class Ave(Animal):
     def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, envergadura_asas):
-        
         Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
         self.envergadura_asas = envergadura_asas
 
     def __str__(self):
         return Animal.__str__(self) + f", Envergadura das Asas: {self.envergadura_asas} cm"
 
-    
+class Reptil(Animal):
+    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pele):
+        Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
+        self.tipo_pele = tipo_pele
+
+    def __str__(self):
+        return Animal.__str__(self) + f", Tipo de Pele: {self.tipo_pele}"
