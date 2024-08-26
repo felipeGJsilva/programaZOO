@@ -86,3 +86,6 @@ def main():
 
             animais.append(animal)
             print(f"Animal {animal.nome} adicionado com sucesso!")
+
+if __name__ == "__main__":
+    main()
