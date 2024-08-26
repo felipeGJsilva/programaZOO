@@ -28,4 +28,21 @@ class Animal:
         return f"{self.nome}, {self.idade} anos, {self.alimentacao}, Habitat: {self.habitat}"
 
 class Mamifero(Animal):
-    def __init__(self,nome,idade,barulho,movimento,alimentacao, habitat, horas_alimentacao, tipo_pelo): super().__init__(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao) self.tipo_pelo = tipo
+    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pelo):
+    
+        Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
+        self.tipo_pelo = tipo_pelo
+
+    def __str__(self):
+        return Animal.__str__(self) + f", Tipo de Pelo: {self.tipo_pelo}"
+    
+class Ave(Animal):
+    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, envergadura_asas):
+        
+        Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
+        self.envergadura_asas = envergadura_asas
+
+    def __str__(self):
+        return Animal.__str__(self) + f", Envergadura das Asas: {self.envergadura_asas} cm"
+
+    
