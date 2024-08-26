@@ -28,7 +28,7 @@ class Animal:
         return f"{self.nome}, {self.idade} anos, {self.alimentacao}, Habitat: {self.habitat}"
 
 class Mamifero(Animal):
-    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pelo):
+    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao):
     
         Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
       
