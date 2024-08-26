@@ -56,7 +56,7 @@ def main():
         escolha = input('Escolha uma opçãO: ')
         
         if escolha == '1':
-            tipo_animal = input("digite o tipo de animal (mamifero, ave, reptil): ")
+            tipo_animal = input("digite o tipo de animal (mamifero - 1, ave - 2, reptil - 3): ")
             nome = input("digite o nome do animal: ")
             idade = int(input("digite a idade do animal: "))
             barulho = input("digite o barulho do animal: ")
@@ -65,8 +65,8 @@ def main():
             habitat = input("digite o habitat do animal: ")
             horas_alimentacao = input("Horário de alimentação do animal: ")
 
-            if tipo_animal == "mamífero":
-                tipo_pelo = input("Tipo de pelo: ")
+            if tipo_animal == "1":
+               
                 animal = Mamifero(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
             elif tipo_animal == "ave":
                 
