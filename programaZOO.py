@@ -6,7 +6,7 @@ class Animal:
         self.movimento = movimento
         self.alimentacao = alimentacao
         self.habitat = habitat
-        self.vizinhos = []  # Inicializa a lista de vizinhos aqui
+        self.vizinhos = []  
         self.horas_alimentacao = horas_alimentacao
     
     def adicionar_vizinho(self, vizinho):
@@ -44,7 +44,7 @@ def main():
     while True:
         print("  MENU  ")
         print("1. Adicionar animal")
-        print("2. Sair")  # Adicionei uma opção para sair
+        print("2. Buscar animal") 
 
         escolha = input('Escolha uma opção: ')
         
@@ -72,8 +72,11 @@ def main():
             print(f"Animal {animal.nome} adicionado com sucesso!")
 
         elif escolha == '2':
-            print("Encerrando o programa.")
-            break
+            nome = input("Digite o nome do animal: ")
+            for animal in animais:
+                  if animal.nome.lower() == nome.lower():
+                      print(f"nome = {animal.nome}")
+        
 
         else:
             print("Opção inválida, tente novamente.")
