@@ -1,19 +1,19 @@
 class Animal:
-    def __init__(self,nome,idade,barulho,movimento,alimentacao,habitat,vizinhos,horas_alimentacao):
+    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao):
         self.nome = nome
         self.idade = idade
         self.barulho = barulho
         self.movimento = movimento
         self.alimentacao = alimentacao
         self.habitat = habitat
-        self.vizinhos = []
+        self.vizinhos = []  # Inicializa a lista de vizinhos aqui
         self.horas_alimentacao = horas_alimentacao
     
-    def adicionar_vizinho(self,vizinho):
-        if len(self.vizinhos) <2:
+    def adicionar_vizinho(self, vizinho):
+        if len(self.vizinhos) < 2:
             self.vizinhos.append(vizinho)
         else:
-            print(f"{self.nome} ja tem o numero maximo de vizinhos")
+            print(f"{self.nome} já tem o número máximo de vizinhos.")
 
     def fazer_barulho(self):
         return f"{self.nome} faz {self.barulho}!"
@@ -29,50 +29,40 @@ class Animal:
 
 class Mamifero(Animal):
     def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao):
-    
         Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
-      
-   
-    
+
 class Ave(Animal):
     def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao):
         Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
-      
-
-   
 
 class Reptil(Animal):
     def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao):
         Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
-        
-def main():
 
+def main():
     animais = []
     while True:
         print("  MENU  ")
-        print("1. adicinonar animal")
-        
-        
-        escolha = input('Escolha uma opçãO: ')
+        print("1. Adicionar animal")
+        print("2. Sair")  # Adicionei uma opção para sair
+
+        escolha = input('Escolha uma opção: ')
         
         if escolha == '1':
-            tipo_animal = input("digite o tipo de animal (mamifero - 1, ave - 2, reptil - 3): ")
-            nome = input("digite o nome do animal: ")
-            idade = int(input("digite a idade do animal: "))
-            barulho = input("digite o barulho do animal: ")
-            movimento = input("digite o movimento do animal: ")
-            alimentacao = input("digite a alimentação do animal: ")
-            habitat = input("digite o habitat do animal: ")
+            tipo_animal = input("Digite o tipo de animal (mamífero - 1, ave - 2, réptil - 3): ")
+            nome = input("Digite o nome do animal: ")
+            idade = int(input("Digite a idade do animal: "))
+            barulho = input("Digite o barulho do animal: ")
+            movimento = input("Digite o movimento do animal: ")
+            alimentacao = input("Digite a alimentação do animal: ")
+            habitat = input("Digite o habitat do animal: ")
             horas_alimentacao = input("Horário de alimentação do animal: ")
 
             if tipo_animal == "1":
-               
                 animal = Mamifero(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
-            elif tipo_animal == "ave":
-                
+            elif tipo_animal == "2":
                 animal = Ave(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
-            elif tipo_animal == "réptil":
-               
+            elif tipo_animal == "3":
                 animal = Reptil(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
             else:
                 print("Tipo de animal inválido.")
@@ -80,6 +70,13 @@ def main():
 
             animais.append(animal)
             print(f"Animal {animal.nome} adicionado com sucesso!")
+
+        elif escolha == '2':
+            print("Encerrando o programa.")
+            break
+
+        else:
+            print("Opção inválida, tente novamente.")
 
 if __name__ == "__main__":
     main()
