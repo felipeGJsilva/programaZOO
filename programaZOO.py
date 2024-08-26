@@ -51,3 +51,38 @@ class Reptil(Animal):
 
     def __str__(self):
         return Animal.__str__(self) + f", Tipo de Pele: {self.tipo_pele}"
+
+def main():
+    animais = []
+    while True:
+        print("  MENU  ")
+        print("1. adicinonar animal")
+        
+        
+        escolha = input('Escolha uma opçãO: ')
+        
+        if escolha == '1':
+            tipo_animal = input("Digite o tipo de animal (mamífero, ave, réptil): ").lower()
+            nome = input("Nome do animal: ")
+            idade = int(input("Idade do animal: "))
+            barulho = input("Barulho característico do animal: ")
+            movimento = input("Forma de locomoção do animal: ")
+            alimentacao = input("Dieta do animal: ")
+            habitat = input("Habitat natural do animal: ")
+            horas_alimentacao = input("Horário de alimentação do animal: ")
+
+            if tipo_animal == "mamífero":
+                tipo_pelo = input("Tipo de pelo: ")
+                animal = Mamifero(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pelo)
+            elif tipo_animal == "ave":
+                envergadura_asas = input("Envergadura das asas (em cm): ")
+                animal = Ave(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, envergadura_asas)
+            elif tipo_animal == "réptil":
+                tipo_pele = input("Tipo de pele: ")
+                animal = Reptil(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pele)
+            else:
+                print("Tipo de animal inválido.")
+                continue
+
+            animais.append(animal)
+            print(f"Animal {animal.nome} adicionado com sucesso!")
