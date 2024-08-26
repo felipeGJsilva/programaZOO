@@ -31,28 +31,22 @@ class Mamifero(Animal):
     def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pelo):
     
         Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
-        self.tipo_pelo = tipo_pelo
-
-    def __str__(self):
-        return Animal.__str__(self) + f", Tipo de Pelo: {self.tipo_pelo}"
+      
+   
     
 class Ave(Animal):
-    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, envergadura_asas):
+    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao):
         Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
-        self.envergadura_asas = envergadura_asas
+      
 
-    def __str__(self):
-        return Animal.__str__(self) + f", Envergadura das Asas: {self.envergadura_asas} cm"
+   
 
 class Reptil(Animal):
-    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pele):
+    def __init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao):
         Animal.__init__(self, nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
-        self.tipo_pele = tipo_pele
-
-    def __str__(self):
-        return Animal.__str__(self) + f", Tipo de Pele: {self.tipo_pele}"
-
+        
 def main():
+
     animais = []
     while True:
         print("  MENU  ")
@@ -62,24 +56,24 @@ def main():
         escolha = input('Escolha uma opçãO: ')
         
         if escolha == '1':
-            tipo_animal = input("Digite o tipo de animal (mamífero, ave, réptil): ").lower()
-            nome = input("Nome do animal: ")
-            idade = int(input("Idade do animal: "))
-            barulho = input("Barulho característico do animal: ")
-            movimento = input("Forma de locomoção do animal: ")
-            alimentacao = input("Dieta do animal: ")
-            habitat = input("Habitat natural do animal: ")
+            tipo_animal = input("digite o tipo de animal (mamifero, ave, reptil): ")
+            nome = input("digite o nome do animal: ")
+            idade = int(input("digite a idade do animal: "))
+            barulho = input("digite o barulho do animal: ")
+            movimento = input("digite o movimento do animal: ")
+            alimentacao = input("digite a alimentação do animal: ")
+            habitat = input("digite o habitat do animal: ")
             horas_alimentacao = input("Horário de alimentação do animal: ")
 
             if tipo_animal == "mamífero":
                 tipo_pelo = input("Tipo de pelo: ")
-                animal = Mamifero(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pelo)
+                animal = Mamifero(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
             elif tipo_animal == "ave":
-                envergadura_asas = input("Envergadura das asas (em cm): ")
-                animal = Ave(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, envergadura_asas)
+                
+                animal = Ave(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
             elif tipo_animal == "réptil":
-                tipo_pele = input("Tipo de pele: ")
-                animal = Reptil(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao, tipo_pele)
+               
+                animal = Reptil(nome, idade, barulho, movimento, alimentacao, habitat, horas_alimentacao)
             else:
                 print("Tipo de animal inválido.")
                 continue
