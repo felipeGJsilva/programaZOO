@@ -114,7 +114,7 @@ def main():
         elif escolha == '6':
             print("Simulando alimentação dos animais...")
             for animal in animais:
-                print(animal.alimentar())
+                print(animal.alimentacao())
 
         elif escolha == '7':
             print("Encerrando o programa.")
