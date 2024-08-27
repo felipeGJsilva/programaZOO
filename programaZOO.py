@@ -24,11 +24,13 @@ class Reptil(Animal):
 def main():
     animais = []
     while True:
-        print("  MENU  ")
+        print("\n  MENU  ")
         print("1. Adicionar animal")
         print("2. Buscar animal") 
         print("3. Listar todos os animais")
         print("4. Listar animais por categoria")
+        print("5. Sair")
+        
 
         escolha = input('Escolha uma opção: ')
         
@@ -71,6 +73,7 @@ def main():
             for animal in animais:
                 print(animal.nome)
 
-        
+        elif escolha == "5":
+            break
 if __name__ == "__main__":
     main()
