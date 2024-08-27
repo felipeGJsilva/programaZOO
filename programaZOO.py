@@ -54,7 +54,7 @@ def main():
 
             animais.append(animal)
             print(f"Animal {animal.nome} adicionado com sucesso!")
-            break
+            
 
         elif escolha == '2':
             nome = input("Digite o nome do animal: ")
@@ -64,7 +64,7 @@ def main():
                       print(f"idade = {animal.idade}")
                       print(f"barulho = {animal.barulho}")
                       print(f"idade = {animal.movimento}")
-            break
+           
         elif escolha == "3":
             for animal in animais:
                 print(animal.nome)
