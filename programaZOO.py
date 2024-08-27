@@ -45,6 +45,8 @@ def main():
         print("  MENU  ")
         print("1. Adicionar animal")
         print("2. Buscar animal") 
+        print("3. Listar todos os animais")
+        print("4. Listar animais por categoria")
 
         escolha = input('Escolha uma opção: ')
         
@@ -70,16 +72,21 @@ def main():
 
             animais.append(animal)
             print(f"Animal {animal.nome} adicionado com sucesso!")
+            break
 
         elif escolha == '2':
             nome = input("Digite o nome do animal: ")
             for animal in animais:
                   if animal.nome.lower() == nome.lower():
                       print(f"nome = {animal.nome}")
+                      print(f"idade = {animal.idade}")
+                      print(f"barulho = {animal.barulho}")
+                      print(f"idade = {animal.movimento}")
+            break
+        elif escolha == "3":
+            for animal in animais:
+                print(animal.nome)
+
         
-
-        else:
-            print("Opção inválida, tente novamente.")
-
 if __name__ == "__main__":
     main()
