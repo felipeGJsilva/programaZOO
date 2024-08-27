@@ -63,8 +63,10 @@ def main():
                       print(f"nome = {animal.nome}")
                       print(f"idade = {animal.idade}")
                       print(f"barulho = {animal.barulho}")
-                      print(f"idade = {animal.movimento}")
-           
+                      print(f"movimento = {animal.movimento}")
+                      print(f"alimentacao = {animal.alimentacao}")
+                      print(f"habitat = {animal.habitat}")
+
         elif escolha == "3":
             for animal in animais:
                 print(animal.nome)
