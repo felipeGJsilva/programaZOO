@@ -29,8 +29,9 @@ def main():
         print("2. Buscar animal") 
         print("3. Listar todos os animais")
         print("4. Listar animais por categoria")
-        print("5. Sair")
-        
+        print("5. Listar os vizinhos")
+        print("6. Simulação de Alimentação")
+        print("7. Sair")
 
         escolha = input('Escolha uma opção: ')
         
@@ -73,7 +74,54 @@ def main():
             for animal in animais:
                 print(animal.nome)
 
-        elif escolha == "5":
+        
+        elif escolha == '4':
+            categoria = input("Digite a categoria (mamífero, ave, réptil): ").lower()
+            categoria_map = {
+                'mamífero': Mamifero,
+                'ave': Ave,
+                'réptil': Reptil
+            }
+            if categoria in categoria_map:
+                categoria_classe = categoria_map[categoria]
+                encontrados = False
+                print(f"Lista de animais da categoria {categoria}:")
+                for animal in animais:
+                    if isinstance(animal, categoria_classe):
+                        print(animal.nome)
+                        encontrados = True
+                if not encontrados:
+                    print(f"Nenhum animal encontrado na categoria {categoria}.")
+            else:
+                print("Categoria inválida.")
+
+        elif escolha == '5':
+            nome = input("Digite o nome do animal: ")
+            encontrado = False
+            for animal in animais:
+                if animal.nome.lower() == nome.lower():
+                    print(f"Vizinhos de {animal.nome}:")
+                    if animal.vizinhos:
+                        for vizinho in animal.vizinhos:
+                            print(vizinho)
+                    else:
+                        print("Este animal não tem vizinhos cadastrados.")
+                    encontrado = True
+                    break
+            if not encontrado:
+                print("Animal não encontrado.")
+
+        elif escolha == '6':
+            print("Simulando alimentação dos animais...")
+            for animal in animais:
+                print(animal.alimentar())
+
+        elif escolha == '7':
+            print("Encerrando o programa.")
             break
+
+        else:
+            print("Opção inválida, tente novamente.")
+
 if __name__ == "__main__":
     main()
